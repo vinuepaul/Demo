@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Demo Project</title>
+    <script type="text/javascript">
+        function Validate() {
+            var password = document.getElementById("txtPassword").value;
+            var confirmPassword = document.getElementById("txtConfirmPassword").value;
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        .label {
+            font-size: 11pt;
+            font-family: Arial Bold versal;
+        }
+
+        .txtbox {
+            height: 20px;
+            width: 250px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="divForm" class="divDisplay" style="width: 100%; height: 500px; ">
+        <table style="width: 100%; padding-left: 5px; padding-top: 5px;" >
+            <tr>
+                <td>
+                    <asp:Label ID="lblUserName" Text="User Name" CssClass="label" runat="server"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtUserName" runat="server" CssClass="txtbox" MaxLength="30" ></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblPassword" Text="Password" CssClass="label" runat="server"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtPassword" runat="server" CssClass="txtbox" MaxLength="30" ></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="lblConfirmPassword" Text="Confirm Password" CssClass="label" runat="server"></asp:Label>
+                </td>
+                <td>
+                    <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="txtbox" MaxLength="30" ></asp:TextBox>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" OnClientClick="return Validate();" />
+                </td>
+            </tr>
+
+            </table>>
+  </body>
+</html>
